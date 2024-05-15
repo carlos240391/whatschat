@@ -10,7 +10,8 @@ const express = require("express");
 // Create a new client instance
 global.client = new Client({
     authStrategy: new LocalAuth(),
-    puppeteer: { headless: true },
+    puppeteer: { headless: true,args: ['--no-sandbox', '--disable-setuid-sandbox'] },
+ 
     webVersionCache: {
         type: "remote",
         remotePath:
