@@ -1,5 +1,5 @@
 const { Client,LocalAuth, List } = require('whatsapp-web.js');
-// const qrcode = require('qrcode-terminal');
+const qrcode = require('qrcode-terminal');
 const bodyParser = require("body-parser");
 const { entryMessage } = require('./bot/messages/messages');
 const { firstOrder, initOrder, getFile, cancelOrder, continueProcess } = require('./bot/messages/orderMessages');
@@ -32,9 +32,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 
 client.on('qr', qr => {
-    // console.log("RESULTADO QR", qr);
+    console.log("RESULTADO QR", qr);
     fs.writeFileSync("./components/last.qr", qr);
-    // qrcode.generate(qr, {small: true});
+    qrcode.generate(qr, {small: true});
 });
 
 client.on('ready', () => {
