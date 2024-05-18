@@ -15,12 +15,12 @@ router.get("/checkauth", async (req, res) => {
     });
 });
 
-router.get("/getqr", async (req, res) => {
+router.get("/sesion", async (req, res) => {
   client
     .getState()
     .then((data) => {
       if (data) {
-        res.write("<html><body><h2>Already Authenticated</h2></body></html>");
+        res.write("<html><body><h2><a href='/'>Home</a><br/> Already Authenticated</h2></body></html>");
         res.end();
       } else sendQr(res);
     })
@@ -40,9 +40,20 @@ function sendQr(res) {
     if (!err && last_qr) {
       var page = `
                     <html>
+                    <head>
+                      <style>
+                        *{
+                          padding:0px;
+                          margin:0px;
+                          box-sizing:border-box;
+                          font-family:'Courier New', Courier, monospace;
+                        }
+                      </style>
+                    </head>
                         <body>
                             <script type="module">
                             </script>
+                            <a href='/'>Home</a><br/>
                             <div id="qrcode"></div>
                             <script type="module">
                                 import QrCreator from "https://cdn.jsdelivr.net/npm/qr-creator/dist/qr-creator.es6.min.js";

@@ -9,7 +9,7 @@ const entryMessage = `🤖 Bienvenido al BOT de KARSO.
 🚨 Sigue atentamente las instrucciones, de lo contrario el pedido no se realizará correctamente
 `
 
-const continueProcessMsg = `Continua con el proceso, o escribe  *CANCELAR* ✎ para empezar de nuevo.\n`
+const continueProcessMsg = `> Continua con el proceso, o escribe  ~CANCELAR~ para empezar de nuevo.\n \n`
 
 module.exports = {
     entryMessage,

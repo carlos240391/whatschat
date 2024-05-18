@@ -1,0 +1,1 @@
+{"step":5,"idClient":"5215576816666@c.us","product":{"descripcion":"Tarjetas couche 4x1, 130g. (Color al frente, escala de grises en el reverso).","sku":"70000413","precio":65},"cantidad":"2","cliente":"Carlos Enrique Rodriguez Perez","tienda":"3"}
