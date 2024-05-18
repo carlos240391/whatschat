@@ -23,7 +23,7 @@ global.authed = false;
 
 const app = express();
 
-const port = 8082;
+const port = process.env.PORT || 3000;
 //Set Request Size Limit 50 MB
 app.use(bodyParser.json({ limit: "50mb" }));
 
@@ -73,6 +73,6 @@ client.initialize();
 const authRoute = require("./components/auth")
 
 app.use("/auth", authRoute);
-app.listen(port, () => {
+app.listen(port,"0.0.0.0", () => {
     console.log("Server Running Live on Port : " + port);
 });
